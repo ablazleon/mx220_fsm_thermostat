@@ -66,22 +66,22 @@ void led_setup() {
 
 // Check functions
 // Completar aquí con condición del apartado 3.2.6
-int ??? (fsm_t *this) {
+int checkHeat (fsm_t *this) {
   return (flags & FLAG_START_HEAT);
 }
 
-int ??? (fsm_t *this) {
+int checkCold (fsm_t *this) {
   return (flags & FLAG_STOP_HEAT);
 }
 
 // Output functions
 // Completar aquí con condición del apartado 3.2.6
-void ??? (fsm_t *this) {
+void thermostat_off (fsm_t *this) {
   LED_RED_OFF();
   flags &= ~FLAG_STOP_HEAT;
 }
 
-void ??? (fsm_t *this) {
+void thermostat_on (fsm_t *this) {
   LED_RED_ON();
   flags &= ~FLAG_START_HEAT;
 }    
@@ -151,7 +151,7 @@ int main() {
     timer1_setup();
     sensor_setup(); // Configure ADC
     // Completar aquí con condición del apartado 3.2.8
-    ???(fsm);
+    thermostat_off(fsm);
 
     INTERR_MVEC_EN(); //Interrupt Controller configured for multi vectored mode
     GLOBAL_INTERR_EN(); // Enable global interrupt
