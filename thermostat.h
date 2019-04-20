@@ -37,13 +37,13 @@ void sensor_setup(void);
 
 /* Check functions*/
 // Completar aquí con condición del apartado 3.2.6
-int ??? (fsm_t *this);
-int ??? (fsm_t *this);
+int checkHeat (fsm_t *this);
+int checkCold (fsm_t *this);
 
 /* Actuation functions */
 // Completar aquí con condición del apartado 3.2.6
-void ??? (fsm_t *this);
-void ??? (fsm_t *this);
+void thermostat_off (fsm_t *this);
+void thermostat_on (fsm_t *this);
 
 /* Others */
 void adcManualConfig(int prescale, int tadMultiplier);
