@@ -33,6 +33,21 @@
 #define TIMER1_INTERR_PRIOR(x) IPC1bits.T1IP = x
 #define TIMER1_INTERR_SUBPRIOR(x) IPC1bits.T1IS = x
 
+#define TIMER2_ENABLE() T2CONSET = _T2CON_ON_MASK
+#define TIMER2_DISABLE() T2CONCLR = _T2CON_ON_MASK
+#define TIMER2_IF_CLEAR() IFS0CLR = _IFS0_T2IF_MASK
+#define TIMER2_RESET() TMR2 = 0;
+#define TIMER2_IF IFS0bits.T2IF
+#define TIMER2_SOURCE_INTERNAL() T2CONbits.TCS = 0 //TCS: Timer Clock Source Select bit
+#define TIMER2_PRESCALE_1_1() T2CONbits.TCKPS = 0 // Timer Input Clock Prescale Select bits
+#define TIMER2_PRESCALE_1_64() T2CONbits.TCKPS = 2 // Timer Input Clock Prescale Select bits
+#define TIMER2_PRESCALE_1_256() T2CONbits.TCKPS = 3 // Timer Input Clock Prescale Select bits
+#define TIMER2_INTERR_EN() IEC0SET = _IEC0_T2IE_MASK
+#define TIMER2_INTERR_DIS() IEC0CLR = _IEC0_T2IE_MASK
+#define TIMER2_INTERR_PRIOR(x) IPC2bits.T2IP = x
+#define TIMER2_INTERR_SUBPRIOR(x) IPC2bits.T2IS = x
+
+
 /* INTERRUPTIONS */
 #define GLOBAL_INTERR_EN()  __builtin_mtc0(12,0,(__builtin_mfc0(12,0) | 0x0001))  // Global interrupt enable
 #define GLOBAL_INTERR_DIS()  __builtin_mtc0(12,0,(__builtin_mfc0(12,0) & 0xFFFE))  // Global interrupt disable

@@ -45,10 +45,11 @@
 #define BUTTON_INTERR_PRIOR(x) IPC0bits.INT0IP = x
 #define BUTTON_INTERR_SUBPRIOR(x) IPC0bits.INT0IS = x
 
-// Completar aquí con condición del apartado 3.2.5
-#define TEMP_SENSOR_REG ???
-#define TEMP_SENSOR_INIT() ANSEL???SET = TRIS???bits.TRIS???
-#define TEMP_SENSOR_AS_INPUT() TRIS???SET = TRIS???bits.TRIS???
+
+// Completar aquí con condición del apartado 3.1.1
+#define LDR_SENSOR_REG ???
+#define LDR_SENSOR_INIT() ANSEL???SET = TRIS???bits.TRIS???
+#define LDR_SENSOR_AS_INPUT() TRIS???SET = TRIS???bits.TRIS???
 
 
 #endif /* _PINGUINO_CONF_MX220_H */
